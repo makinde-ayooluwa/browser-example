@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="assets/fonts/NotoSans-VariableFont_wdth,wght.ttf">
+  <link rel="preconnect" href="assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf">
+  <link rel="stylesheet" href="bootstrap5/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap5/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <style>
+    @font-face {
+      font-family: "MyCustomFont1";
+      /* Choose a name for your font */
+      src: url("./assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf") format("truetype");
+      /* Adjust path and format as needed */
+      font-weight: normal;
+      /* Optional: Define font weight if applicable */
+      font-style: normal;
+      /* Optional: Define font style if applicable */
+    }
+
+    @font-face {
+      font-family: "MyCustomFont2";
+      /* Choose a name for your font */
+      src: url("./assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf") format("truetype");
+      /* Adjust path and format as needed */
+      font-weight: normal;
+      /* Optional: Define font weight if applicable */
+      font-style: normal;
+      /* Optional: Define font style if applicable */
+    }
+
+    .bg-dark-mode {
+      background: linear-gradient(90deg, #040918 0%, #091540 100%);
+    }
+
+    .bg-light-mode {
+      background: linear-gradient(90deg, #EBF2FC 0%, #EEF8F9 100%);
+    }
+
+    .round {
+      border-radius: 10px;
+    }
+
+    .bg-gray {
+      background: hsl(226, 11%, 37%);
+    }
+
+    .color-white {
+      color: hsl(200, 60%, 99%);
+    }
+
+    .font-custom-1 {
+      font-family: MyCustomFont1;
+    }
+
+    .font-custom-2 {
+      font-family: MyCustomFont2;
+    }
+
+    .button {
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      height: max-content;
+      margin-left: 5%;
+      font-size: large;
+      font-weight: 400;
+    }
+
+    .button-outline-orange {
+      background: hsl(226, 11%, 37%);
+      color: hsl(200, 60%, 99%);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .my-container {
+      width: 100%;
+      border: 0.000000001px solid white;
+    }
+
+    .button-outline-orange:hover {
+      background: hsl(3, 86%, 64%);
+      color: black;
+    }
+  </style>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>-->
+</head>
+
+<body class="bg-dark-mode">
+  <!--<div class="toggle-switch-container">
+
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <span class="toggle-slider"></span>
+  </label>
+</div>
+
+  Extensions List
+
+  All
+  Active
+  Inactive
+
+   If you plan to use the JSON file to populate the data dynamically, you can delete the content below 
+
+  DevLens
+  Quickly inspect page layouts and visualize element boundaries.
+  Remove
+
+  StyleSpy
+  Instantly analyze and copy CSS from any webpage element.
+  Remove
+
+  SpeedBoost
+  Optimizes browser resource usage to accelerate page loading.
+  Remove
+
+  JSONWizard
+  Formats, validates, and prettifies JSON responses in-browser.
+  Remove
+
+  TabMaster Pro
+  Organizes browser tabs into groups and sessions.
+  Remove
+
+  ViewportBuddy
+  Simulates various screen resolutions directly within the browser.
+  Remove
+
+  Markup Notes
+  Enables annotation and notes directly onto webpages for collaborative debugging.
+  Remove
+
+  GridGuides
+  Overlay customizable grids and alignment guides on any webpage.
+  Remove
+
+  Palette Picker
+  Instantly extracts color palettes from any webpage.
+  Remove
+
+  LinkChecker
+  Scans and highlights broken links on any page.
+  Remove
+
+  DOM Snapshot
+  Capture and export DOM structures quickly.
+  Remove
+
+  ConsolePlus
+  Enhanced developer console with advanced filtering and logging.
+  Remove
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+  <div class="container">
+    <div class="p-2">
+      <div class="row">
+        <!-- Header -->
+        <div class="col-12">
+          <div class="round bg-gray">
+            <div class="p-3">
+              <div class="row">
+                <div class="col">
+                  <img src="assets/images/logo.svg" class="img-fluid" alt="">
+                </div>
+                <div class="col d-flex justify-content-end round">
+                  <img src="assets/images/icon-sun.svg" class="round img-fluid p-2"
+                    style="background-color: hsl(0, 0%, 78%);" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content -->
+      <div class="my-5 py-3">
+        <div class="row p-0">
+          <div class="col-md">
+            <h1 class="fw-bold color-white font-custom-2 text-center text-md-start">Extensions List</h1>
+          </div>
+          <div class="col-md d-flex justify-content-md-end justify-content-center">
+            <button class="button button-outline-orange">All</button>
+            <button class="button button-outline-orange">Active</button>
+            <button class="button button-outline-orange">Inactive</button>
+          </div>
+        </div>
+      </div>
+      <!-- Toggle Switch -->
+      <style>
+        /* Hide the default checkbox */
+        .toggle-input {
+          display: none;
+        }
+
+        /* Style the container label */
+        .toggle-switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+          cursor: pointer;
+        }
+
+        /* Style the slider background */
+        .slider {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          border-radius: 34px;
+          transition: background-color 0.4s;
+        }
+
+        /* Style the slider handle */
+        .slider::before {
+          content: "";
+          position: absolute;
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          border-radius: 50%;
+          transition: transform 0.4s;
+        }
+
+        /* Change background color when checked */
+        .toggle-input:checked+.slider {
+          background-color: hsl(3, 86%, 64%);
+          /* Blue when checked */
+        }
+
+        /* Move the handle when checked */
+        .toggle-input:checked+.slider::before {
+          transform: translateX(26px);
+        }
+      </style>
+      <!-- Main -->
+      <div class="pt-2">
+        <div class="row extension-page">
+          <script>
+            let extensionHtml = "";
+            fetch("data.json")
+              .then(res => res.json())
+              .then(data => {
+                $(document).ready(function () {
+                  data.forEach(({ logo, name, description, isActive }) => {
+                    extensionHtml += `
+                      <div class="col-md-4 mb-3 extension">
+                        <div class="my-container round p-3">
+                          <div class="d-flex">
+                            <div class="p-2">
+                              <img src="${logo}">
+                            </div>
+                            <div class="d-grid p-2">
+                              <h1 class="font-custom-2 py-2 h5 color-white">${name}</h1>
+                              <p style="font-weight:200;" class="color-white fs-6 font-custom-2">${description}</p>
+                            </div>
+                          </div>
+                          <div class="pt-3 pb-1">
+                            <div class="px-3">
+                              <div class="row">
+                                <div class="col">
+                                  <button class="button button-outline-orange">Remove</button>
+                                </div>
+                                <div class="col d-flex justify-content-end">
+                                  <label class="toggle-switch">
+                                    <input checked="${isActive}" type="checkbox" id="myToggle" class="toggle-input">
+                                    <span class="slider"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+
+                  });
+                });
+                let extensions = document.querySelectorAll(".extension");
+                extensions.forEach(extension => {
+                  let checkbox = extension.querySelector("input");
+                  checkbox.addEventListener("click",function(){
+                    checkbox.checked = false;
+                  })
+                })
+                $(".extension-page").html(extensionHtml);
+              });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
