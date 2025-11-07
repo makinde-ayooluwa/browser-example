@@ -282,7 +282,7 @@
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                   <label class="toggle-switch">
-                                    <input checked="${isActive}" type="checkbox" id="myToggle" class="toggle-input">
+                                    <input type="checkbox" id="myToggle" class="toggle-input">
                                     <span class="slider"></span>
                                   </label>
                                 </div>
@@ -304,6 +304,19 @@
                 })
                 $(".extension-page").html(extensionHtml);
               });
+          </script>
+          <script>
+            let toggle = document.querySelectorAll("#myToggle");
+            toggle.forEach(toggle => {
+              toggle.removeAttribute("checked");
+              toggle.onclick = function(){
+                if(toggle.getAttribute("checked")){
+                  toggle.removeAttribute("checked");
+                }else{
+                  toggle.setAttribute("checked","");
+                }
+              }
+            });
           </script>
         </div>
       </div>
